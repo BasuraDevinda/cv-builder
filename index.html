@@ -1,54 +1,97 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CV Builder</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Professional CV Builder</title>
 
-  <!-- PDF library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- PDF Download Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
-
 <body>
 
-<h1>CV Builder</h1>
+    <div class="container">
 
-<div class="container">
+        <!-- FORM SECTION -->
+        <div class="form-section">
 
-  <!-- FORM -->
-  <div class="form">
-    <h2>Enter Your Details</h2>
+            <h2>Create Your CV</h2>
 
-    <input type="text" id="name" placeholder="Full Name">
-    <input type="text" id="email" placeholder="Email">
+            <input type="text" id="name" placeholder="Full Name">
 
-    <textarea id="skills" placeholder="Skills"></textarea>
-    <textarea id="education" placeholder="Education"></textarea>
-    <textarea id="experience" placeholder="Experience"></textarea>
+            <input type="text" id="jobTitle" placeholder="Job Title">
 
-    <button onclick="generateCV()">Preview CV</button>
-    <button onclick="downloadCV()">Download PDF</button>
-  </div>
+            <input type="email" id="email" placeholder="Email Address">
 
-  <!-- CV PREVIEW -->
-  <div class="preview" id="cv">
+            <input type="text" id="phone" placeholder="Phone Number">
 
-    <h1 id="cvName">Your Name</h1>
-    <p id="cvEmail">Email</p>
+            <input type="text" id="location" placeholder="Location">
 
-    <h3>Skills</h3>
-    <p id="cvSkills"></p>
+            <textarea id="summary" placeholder="Professional Summary"></textarea>
 
-    <h3>Education</h3>
-    <p id="cvEducation"></p>
+            <textarea id="skills" placeholder="Skills (Separate with commas)"></textarea>
 
-    <h3>Experience</h3>
-    <p id="cvExperience"></p>
+            <textarea id="education" placeholder="Education"></textarea>
 
-  </div>
+            <textarea id="experience" placeholder="Work Experience"></textarea>
 
-</div>
+            <textarea id="projects" placeholder="Projects"></textarea>
 
-<script src="script.js"></script>
+            <div class="button-group">
+                <button onclick="saveCV()">Save CV</button>
+                <button onclick="downloadCV()">Download PDF</button>
+                <button onclick="clearCV()">Clear</button>
+            </div>
+
+        </div>
+
+        <!-- CV PREVIEW -->
+        <div class="cv-preview" id="cv">
+
+            <div class="header">
+                <h1 id="previewName">Your Name</h1>
+                <h3 id="previewJobTitle">Job Title</h3>
+
+                <p>
+                    <span id="previewEmail"></span> |
+                    <span id="previewPhone"></span> |
+                    <span id="previewLocation"></span>
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Professional Summary</h2>
+                <p id="previewSummary"></p>
+            </div>
+
+            <div class="section">
+                <h2>Skills</h2>
+                <ul id="previewSkills"></ul>
+            </div>
+
+            <div class="section">
+                <h2>Education</h2>
+                <p id="previewEducation"></p>
+            </div>
+
+            <div class="section">
+                <h2>Experience</h2>
+                <p id="previewExperience"></p>
+            </div>
+
+            <div class="section">
+                <h2>Projects</h2>
+                <p id="previewProjects"></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

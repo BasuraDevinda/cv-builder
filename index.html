@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CV Builder</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PDF library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+
+<h1>CV Builder</h1>
+
+<div class="container">
+
+  <!-- FORM -->
+  <div class="form">
+    <h2>Enter Your Details</h2>
+
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="text" id="email" placeholder="Email">
+
+    <textarea id="skills" placeholder="Skills"></textarea>
+    <textarea id="education" placeholder="Education"></textarea>
+    <textarea id="experience" placeholder="Experience"></textarea>
+
+    <button onclick="generateCV()">Preview CV</button>
+    <button onclick="downloadCV()">Download PDF</button>
+  </div>
+
+  <!-- CV PREVIEW -->
+  <div class="preview" id="cv">
+
+    <h1 id="cvName">Your Name</h1>
+    <p id="cvEmail">Email</p>
+
+    <h3>Skills</h3>
+    <p id="cvSkills"></p>
+
+    <h3>Education</h3>
+    <p id="cvEducation"></p>
+
+    <h3>Experience</h3>
+    <p id="cvExperience"></p>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
